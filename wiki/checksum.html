@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puffercat's ROM Archive - Telegram vs Internet Archive</title>
+    <title>Puffercat's ROM Archive - Verify a downloaded file with checksums</title>
     <style>
         .demo-ribbon {
   width: 100%;
@@ -103,40 +103,37 @@
     <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
     <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
       <div class="demo-crumbs mdl-color-text--grey-500">
-        <a href="/">Puffercat's ROM Archive</a> &gt; <a href=".">Wiki</a> &gt; Telegram vs Internet Archive
+        <a href="/">Puffercat's ROM Archive</a> &gt; <a href=".">Wiki</a> &gt; Verify a downloaded file with checksums
       </div>
-      <h3>Telegram vs Internet Archive</h3>
+      <h3>Verify a downloaded file with checksums</h3>
         <p>
-          While this archive started on Telegram and is still mainly a Telegram channel, every ROM in it is uploaded to both Telegram and Internet Archive. Each has some pros and cons so if you don't know which to choose, use this table to compare them:
+          After downloading a file, you can use checksums to make sure it's not corrupted.<br>
+          In this archive I use 2 types of checksums (on newer uploads). SHA-256 and MD5.<br>
         </p>
-        <div class="mdl-shadow--2dp" style="overflow: scroll;">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric"></th>
-              <th class="mdl-data-table__cell--non-numeric">Telegram</th>
-              <th class="mdl-data-table__cell--non-numeric">Internet Archive</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th class="">Download speed</th>
-              <td class="mdl-data-table__cell--non-numeric">Fast</td>
-              <td class="mdl-data-table__cell--non-numeric">Slow</td>
-            </tr>
-            <tr>
-              <th class="">Requires login</th>
-              <td class="mdl-data-table__cell--non-numeric">Yes</td>
-              <td class="mdl-data-table__cell--non-numeric">No</td>
-</tr>
-<tr>
-  <th class="">User interface</th>
-  <td class="mdl-data-table__cell--non-numeric">Simple, easy to use</td>
-  <td class="mdl-data-table__cell--non-numeric">Chaotic</td>
-</tr>
-          </tbody>
-        </table>
-        </div>
+        <h4>Instructions:</h4>
+        <p><strong>macOS:</strong></p>
+        <p>Open the Terminal and run the following command</p>
+        <p>For SHA-256:</p>
+        <pre><code>shasum -a 256 [file path]</code></pre>
+        <p>For MD5:</p>
+        <pre><code>md5 [file path]</code></pre>
+        <p>Now compare the result of that command with the checksum in the post. If it matches, your file is valid. If it doesn't, delete the file and download it again.</p>
+        <br>
+        <p><strong>Linux:</strong></p>
+        <p>Open the Terminal and run the following command</p>
+        <p>For SHA-256:</p>
+        <pre><code>sha256sum [file path]</code></pre>
+        <p>For MD5:</p>
+        <pre><code>md5sum [file path]</code></pre>
+        <p>Now compare the result of that command with the checksum in the post. If it matches, your file is valid. If it doesn't, delete the file and download it again.</p>
+        <br>
+        <p><strong>Windows:</strong></p>
+        <p>Open PowerShell and run the following command</p>
+        <p>For SHA-256:</p>
+        <pre><code>certutil -hashfile [file path] SHA256</code></pre>
+        <p>For MD5:</p>
+        <pre><code>certutil -hashfile [file path] MD5</code></pre>
+        <p>Now compare the result of that command with the checksum in the post. If it matches, your file is valid. If it doesn't, delete the file and download it again.</p>
         
     </div>
   </div>
